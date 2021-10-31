@@ -61,7 +61,7 @@ button:hover {
 }
 .game-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 500px));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 660px));
   justify-content: space-around;
   height: 600px;
 }
