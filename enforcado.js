@@ -54,7 +54,8 @@ function desenharAforcado(num){
         case 1:
             feet.style.borderLeft = '3px solid var(--color-font)';
             tries.textContent = 0;
-            alert('Perdio');
+            modalLose.classList.remove('hidden');
+            overlay.classList.remove('hidden');
             break;
         
     }
@@ -94,12 +95,16 @@ function checkLetter(letra, code, word=secretWordArray){
         }
         repetidos.push(letra)
     if(wordOfUser.toString() === word.toString()){
-        alert("GANHO")
+        //alert("GANHO")
+        modalWin.classList.remove('hidden');
+        overlay.classList.remove('hidden');
     }
     
 
     }else{
-        alert('Perdio');
+        //alert('Perdio');
+        modalLose.classList.remove('hidden');
+        overlay.classList.remove('hidden');
     }
 
 }

@@ -27,15 +27,50 @@
                 <div id="feet"></div>
             </div>
             <div class='word'>
-               <!-- devo adicionar estos <div class="letter">J</div> com javascritp-->
+               <!-- devo adicionar estos <div class="letter"></div> com javascritp-->
                 
                 
             </div>
             
         </div>
-        
+        <button id="reiniciar"onclick="location.reload()">reiniciar</button>  
     </main>
-    <button onclick="location.reload()">reiniciar</button>
-    <script src="enforcado.js"></script>    
+    
+    
+    <button class="show-rules">Conheça as Regras</button>
+
+    <div class="modal hidden win">
+      <button class="close-modal">&times;</button>
+      <h1>Voce Venceu!! 😍</h1>
+      <p>
+        Parabens!!!
+      </p>
+    </div>
+    <div class="modal hidden lose">
+        <button class="close-modal">&times;</button>
+        <h1>Voce Perdeu 😧</h1>
+        <p>
+          siga intentando
+        </p>
+      </div>
+      <div class="modal hidden rules">
+        <button class="close-rules close-modal">&times;</button>
+        <h1>As Reglas São 👮</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.
+        </p>
+      </div>
+    <div class="overlay hidden"></div>
+    
+    <script src="modal.js"></script> 
+    <script src="enforcado.js"></script>
+    
+       
 </body>
 </html>
