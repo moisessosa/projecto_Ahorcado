@@ -15,7 +15,7 @@ let temp =0;
 let wordOfUser=[]; 
 let wordOfUserAux=[]; 
 let secretWordArray;
-const repetidos = [];// quizas
+const repetidos = [];
 tries.textContent = opportunities;
 // funções
 function gerarEspaciosdaPalavraSecreta(palavra){
@@ -73,9 +73,7 @@ function checkLetter(letra, code, word=secretWordArray){
                     wordOfUser[id]=letra;
                     wordOfUserAux.push(letra)
                     console.log(wordOfUser,"\n",wordOfUserAux);//
-                }/* else{
-                    console.log(letter,letra,id)
-                } */
+                }
                 id++
             }
             
@@ -91,7 +89,7 @@ function checkLetter(letra, code, word=secretWordArray){
             }
 
             
-        }else{//posible sonido de error 
+        }else{
             console.log('no es una letra')
         }
         repetidos.push(letra)
@@ -111,29 +109,25 @@ const getWord =()=>{
             .then(response => response.json())
             .then(data =>{
                 
-                //document.getElementById('hidden').value = data.body.Word;
+                
                 secretWord = data.body.Word.toLowerCase().normalize("NFD").replace(/[^a-zA-Zs]/g, "");
                 secretWordArray = secretWord.split('')
-                //return  data.body.Word
+                
                  console.log('dentro do fecth',secretWord)
                  gerarEspaciosdaPalavraSecreta(secretWordArray);
                  msg.style.color = '#eee';
                  msg.textContent ="Pode começar jogar ";
-                 /* document.body.addEventListener('keyup', (evt)=>{
-                     
-                     checkLetter(evt.key, evt.keyCode, secretWordArray);
-                 }); */
+                 
             })
             .catch(err =>{
                 msg.style.color = 'red';
-                msg.textContent =" no se pudo conectar la API " + err;
-             err})
+                msg.textContent =" no se pudo conectar la API " + err;})
   
-    //"https://palabras-aleatorias-public-api.herokuapp.com/word-as-image?word=famoso"
+    
 }
-//btnComecar.addEventListener('click', getWord)
+
 getWord()
-//secretWord = document.getElementById('hidden').value;
+
 document.body.addEventListener('keyup', (evt)=>{
                      
     checkLetter(evt.key, evt.keyCode, secretWordArray);
