@@ -186,6 +186,18 @@ main {
   border: none;
   background: none;
 }
+#rules {
+  bottom: 20px;
+  width: 40rem;
+  height: 2.9rem;
+  background-color: rgb(240, 230, 230);
+  margin: auto;
+  margin-bottom: 10px;
+}
+#rules:hover {
+  transform: scale(1.1);
+  background-color: rgb(223, 212, 212);
+}
 @media screen and (max-width: 999px) {
   button {
     bottom: -25%;
