@@ -1,5 +1,5 @@
 let opportunities = 9;
-const url = "https://palabras-aleatorias-public-api.herokuapp.com/random";
+const url = 'https://api.dicionario-aberto.net/random';//"https://palabras-aleatorias-public-api.herokuapp.com/random";
 // API gera palavras aleatorias en espanhol
 const tries = document.getElementById('tries');
 const word = document.querySelector('.word');
@@ -10,6 +10,7 @@ const arms = document.querySelector('#arms');
 const feet = document.querySelector('#feet');
 const btnComecar = document.querySelector('.btn');
 const msg = document.querySelector('.msg');
+let original;
 let secretWord;
 let temp =0;
 let wordOfUser=[]; 
@@ -56,6 +57,7 @@ function desenharAforcado(num){
             tries.textContent = 0;
             modalLose.classList.remove('hidden');
             overlay.classList.remove('hidden');
+            document.querySelector('.original1').textContent = original;
             break;
         
     }
@@ -83,7 +85,7 @@ function checkLetter(letra, code, word=secretWordArray){
                 temp = wordOfUserAux.length;
             }else if(repetidos.indexOf(letra)==-1){
                 console.log("antes de deforcado", opportunities)
-                desenharAforcado(opportunities);
+                desenharAforcado(opportunities, word);
                 opportunities-=1;
                 tries.textContent = opportunities;
                 
@@ -98,6 +100,7 @@ function checkLetter(letra, code, word=secretWordArray){
         //alert("GANHO")
         modalWin.classList.remove('hidden');
         overlay.classList.remove('hidden');
+        document.querySelector('.original').textContent = original;
     }
     
 
@@ -105,6 +108,7 @@ function checkLetter(letra, code, word=secretWordArray){
         //alert('Perdio');
         modalLose.classList.remove('hidden');
         overlay.classList.remove('hidden');
+        document.querySelector('.original1').textContent = original;
     }
 
 }
@@ -114,8 +118,10 @@ const getWord =()=>{
             .then(response => response.json())
             .then(data =>{
                 
-                
-                secretWord = data.body.Word.toLowerCase().normalize("NFD").replace(/[^a-zA-Zs]/g, "");
+                //data.W
+                original= data.word;
+                console.log(data.word);
+                secretWord = data.word.toLowerCase().normalize("NFD").replace(/[^a-zA-Zs]/g, "");
                 secretWordArray = secretWord.split('')
                 
                  console.log('dentro do fecth',secretWord)

@@ -23,6 +23,9 @@ h2 {
 main {
   position: relative;
 }
+li {
+  text-align: justify;
+}
 #reiniciar {
   width: 18rem;
   height: 2.8rem;

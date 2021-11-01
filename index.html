@@ -9,12 +9,12 @@
 </head>
 <body>
     <header>
-        <h1>Bem vindo ao Jogo do Aforcado</h1>
-        <h2>Deves adivinhar a Palavra tem <span id="tries"></span></h2>
+        <h1>Bem-vindo ao Jogo da Forca</h1>
+        <h2>Você deve adivinhar que a Palavra tem <span id="tries"></span> chances de alcançá-lo</h2>
        <!-- <h2 class='btn' onclick="getWord()">começar</h2>-->
     </header>
      <!--<input type="text" id="hidden">-->
-    <h2 class="msg"></h2>
+    <h2 class="msg">Espera....</h2>
     <main>
         
         <div class="game-container">
@@ -42,28 +42,33 @@
     <div class="modal hidden win">
       <button class="close-modal">&times;</button>
       <h1>Voce Venceu!! 😍</h1>
-      <p>
-        Parabens!!!
-      </p>
+      <h3>Parabens!!! você descubriu a palavra: <span class="original"></span></h3><br><p>Clique em 'reiniciar' para jogar novamente</p>
     </div>
     <div class="modal hidden lose">
         <button class="close-modal">&times;</button>
-        <h1>Voce Perdeu 😧</h1>
+        <h1>Voce Perdeu 😧</h1><br>
         <p>
-          siga intentando
+          Não se desamine siga intentando, "VOCÊ CONSIGUE"💪, a palavra era: <span class="original1"></span>
         </p>
       </div>
       <div class="modal hidden rules">
         <button class="close-rules close-modal">&times;</button>
         <h1>As Reglas São 👮</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          Descrição geral. A linha tracejada, a palavra gerada aleatoriamente é representada 
+          para você adivinhar, os traços mostram o número de letras. Cada vez que você comete um erro, 
+          você perde uma oportunidade e uma seção da forca é desenhada. Você deve adivinhar a palavra 
+          antes que as oportunidades se esgotem e o desenho esteja completo.
+
+        </p>
+        <p>
+        <ul>Observaçoes:
+          <li>As palavras foram formatadas, retirando-se sinais de pontuação como '´', '~', '^', 
+            para facilitar a escrita.</li>
+            <li>Também o 'Ç' foi substituído por 'C' para compatibilidade com teclados de outras línguas</li>
+            <li>Você está usando uma API gratuita que gera as palavras em português, note que algumas palavras 
+              possuem erros de grafia, reconheço que é um problema adivinhar as palavras.</li>
+        </ul>
         </p>
       </div>
     <div class="overlay hidden"></div>
