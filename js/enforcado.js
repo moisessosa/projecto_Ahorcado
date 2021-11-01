@@ -66,7 +66,7 @@ function checkLetter(letra, code, word=secretWordArray){
     console.log(letra, code, word);
     if(opportunities >0){
         if(code >=65 && code <=90){
-            
+            playSom('right');//sonido de que la tecla sim é uma letra
             let id = 0;
             for(letter of word){
              
@@ -84,11 +84,11 @@ function checkLetter(letra, code, word=secretWordArray){
                 
                 temp = wordOfUserAux.length;
             }else if(repetidos.indexOf(letra)==-1){
-                console.log("antes de deforcado", opportunities)
+               // console.log("antes de deforcado", opportunities)
                 desenharAforcado(opportunities, word);
                 opportunities-=1;
                 tries.textContent = opportunities;
-                
+                playSom('wrong')
             }
 
             

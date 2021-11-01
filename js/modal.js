@@ -26,3 +26,8 @@ btnsCloseModal.forEach(
         modalLose.classList.add('hidden');
         overlay.classList.add('hidden');
     }))
+    function playSom(tecla) {
+        const audio = new Audio(`sound/${tecla}.mp3`);
+    
+        audio.play();
+    }
