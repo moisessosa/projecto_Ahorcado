@@ -10,6 +10,10 @@ A outra <div class = "word"> é onde os espaços para as letras da palavra a ser
 
 O DOM continua a ser manipulado quando o jogador erra, a Forca é desenhada, como já explicado, e quando ele esta certo, é escrito nos espaços correspondentes. AddEventListener é usado para ouvir o evento de pressionar uma tecla, para fazer isso. O Dom também é manipulado para diminuir o número de chances de o jogador adivinhar a palavra, quando esta em 1 fica en vermelho.
 
+### Modal
+
+Vários "Modais" são usados ​​para exibir as regras e para mensagens de vitória ou derrota.
+
 ### Sons
 
 O jogo emite dois sons, um para quando o jogador erra a letra, ou seja, aquela letra não faz parte da palavra e e outro que é usado para indicar que é uma letra válida ou que ele já escolheu aquela letra. Ou seja, se o jogador pressiona o "x" e isso não faz parte da palavra, emite um som de erro e perde uma oportunidade, se o jogador pressiona o "x" novamente, o jogo não subtrai outra oportunidade, mas cria outra som, esse mesmo som é produzido se ele estiver correto. Se você pressionar uma letra que não seja uma letra de A-Z, não emitirá nenhum som.
