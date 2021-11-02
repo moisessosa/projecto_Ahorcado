@@ -1,6 +1,7 @@
 let opportunities = 9;
-const url = 'https://api.dicionario-aberto.net/random';//"https://palabras-aleatorias-public-api.herokuapp.com/random";
-// API gera palavras aleatorias en espanhol
+const url = 'https://api.dicionario-aberto.net/random';// API em português
+/*"https://palabras-aleatorias-public-api.herokuapp.com/random";
+ API gera palavras aleatorias en espanhol*/
 const tries = document.getElementById('tries');
 const word = document.querySelector('.word');
 const palo = document.querySelector('#palo');
@@ -51,7 +52,9 @@ function desenharAforcado(num){
             break;
         case 2:
             feet.style.borderTop = '3px solid var(--color-font)'; 
+            tries.style.color='red';
             break;
+            
         case 1:
             feet.style.borderLeft = '3px solid var(--color-font)';
             tries.textContent = 0;
